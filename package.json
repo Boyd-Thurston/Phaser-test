@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Boyd-Thurston/Phaser-test#readme",
   "dependencies": {
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "phaser": "^3.24.1"
   }
 }
