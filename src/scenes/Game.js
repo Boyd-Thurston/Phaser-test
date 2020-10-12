@@ -18,6 +18,12 @@ class Game extends Phaser.Scene {
     this.physics.add.existing(paddleLeft, true)
     this.physics.add.collider(paddleLeft, ball)
 
+    const paddleRight = this.add.rectangle(750, 250, 30, 100, 0xffffff, 1)
+    this.physics.add.existing(paddleRight, true)
+    this.physics.add.collider(paddleRight, ball)
+
+    this.input.keyboard.createCursorKeys()
+
   }
 }
 
