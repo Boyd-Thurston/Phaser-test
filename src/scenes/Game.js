@@ -26,7 +26,7 @@ class Game extends Phaser.Scene {
         // TODO: add validation to know if background/node or link has been right clicked on
         // TODO: logging to be removed when nolonger needed
         console.log('context menu pressed')
-        // check to see if menu is already open
+        // check to see if menu is already open and clear if it is
         contextMenuIsDisplaying && contextMenu.destroy()
         // creates menu box on right click
         // TODO: seperate menu for reuse once functionality is established
@@ -35,6 +35,11 @@ class Game extends Phaser.Scene {
           this.add.text(-45, -7, 'add wire', {
             fill: 'black'
           })
+            .setInteractive({ useHandCursor: true })
+            .on('pointerdown', () => { 
+              console.log("cotext menu option pressed")
+              contextMenu.destroy()
+            })
         ])
         contextMenuIsDisplaying = true
       }
