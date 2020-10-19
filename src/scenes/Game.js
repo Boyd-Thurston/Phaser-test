@@ -22,12 +22,12 @@ class Game extends Phaser.Scene {
     let contextMenuIsDisplaying = false
     // handle pointer events
     this.input.on('pointerdown', (pointer) => {
+      // check to see if menu is already open and clear if it is
+      contextMenuIsDisplaying && contextMenu.destroy()
       if(pointer.rightButtonDown()){
         // TODO: add validation to know if background/node or link has been right clicked on
         // TODO: logging to be removed when nolonger needed
         console.log('context menu pressed')
-        // check to see if menu is already open and clear if it is
-        contextMenuIsDisplaying && contextMenu.destroy()
         // creates menu box on right click
         // TODO: seperate menu for reuse once functionality is established
         contextMenu = this.add.container(pointer.x, pointer.y, [
@@ -44,6 +44,7 @@ class Game extends Phaser.Scene {
         contextMenuIsDisplaying = true
       }
       // TODO: destroy menu instance when not in use
+      
     }, this)
 
   }
